@@ -18,6 +18,6 @@ Es una maravilla acariciarle!
 </p>`;
 
 const kittenli = `<li class ="kittenOne">`;
-const kitten1 = document.querySelector('.card kittenOne');
+const kitten1 = document.querySelector('.card.kittenOne');
 kitten1.innerHTML = kittenOne;
 
