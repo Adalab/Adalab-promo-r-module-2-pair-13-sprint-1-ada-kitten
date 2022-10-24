@@ -1,18 +1,18 @@
 "use strict";
 
-const formElement = document.querySelector('.js-new-form');
+const sectionElement = document.querySelector('.js-new-form');
 const listElement = document.querySelector('.js-list');
-const form = formElement.classList.remove("collapsed");
+const form = sectionElement.classList.remove("collapsed");
 
 // Conviertir todos los textos de la etiqueta BODY a minúsculas
 
-//String.toUpperCase DUDA
+//String.toUpperCase DUDA RESUELTA
 
 
 //variables de la información de cada gatito
 //kitten1
 const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
-const kittenOneName = 'Anastasio'; 
+const kittenOneName = 'Anastasio'.toUpperCase();
 const kittenOneDesc = 'Risueño, juguetón, le guta estar tranquilo y que nadie le moleste.Es una maravilla acariciarle!';
 const kittenOneRace = 'British Shorthair';
 
@@ -26,7 +26,6 @@ const kittenOne =  `<li class="card">
                    </li>`
 
 //listElement.innerHTML += kittenOne;
-
 
 //kitten2
 const kittenTwoImage = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
@@ -77,7 +76,6 @@ if( kittenOneDesc.includes(descrSearchText) ) {
     
     
     if( kittenTwoDesc.includes(descrSearchText) ) {
-   
         listElement.innerHTML += kittenTwo;
     }
     
@@ -86,10 +84,10 @@ if( kittenOneDesc.includes(descrSearchText) ) {
     }
 /////////// condicionales .2
 
-    if (formElement.classList.contains('collapsed')) {
-        //completa el código
+    if (sectionElement.classList.contains('collapsed')) {
+        sectionElement.classList.remove('collapsed');
       } else {
-        //completa el código
+        sectionElement.classList.add('collapsed');
       }
     
 
