@@ -2,14 +2,17 @@
 
 const formElement = document.querySelector('.js-new-form');
 const listElement = document.querySelector('.js-list');
-//Mirar para crear un classList.add para añadir todos los gatos
 const form = formElement.classList.remove("collapsed");
+
+// Conviertir todos los textos de la etiqueta BODY a minúsculas
+
+//String.toUpperCase DUDA
 
 
 //variables de la información de cada gatito
 //kitten1
 const kittenOneImage = 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg';
-const kittenOneName = 'Anastasio';
+const kittenOneName = 'Anastasio'; 
 const kittenOneDesc = 'Risueño, juguetón, le guta estar tranquilo y que nadie le moleste.Es una maravilla acariciarle!';
 const kittenOneRace = 'British Shorthair';
 
@@ -22,7 +25,7 @@ const kittenOne =  `<li class="card">
                    </article>
                    </li>`
 
-listElement.innerHTML = kittenOne;
+//listElement.innerHTML += kittenOne;
 
 
 //kitten2
@@ -41,12 +44,12 @@ const kittenTwo = `  <li class="card">
                      </li>`
 
 
-listElement.innerHTML = kittenTwo;
+//listElement.innerHTML += kittenTwo;
 
 //kitten3
 const kittenThreeImage = 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg" alt="gatito';
 const kittenThreeName = 'Cielo';
-const kittenThreeDesc = 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste.Es una maravilla acariciarle!';
+const kittenThreeDesc = 'Ruiseño, cariñoso; juguetón, le guta estar tranquilo y que nadie le moleste.Es una maravilla acariciarle!';
 const kittenThreeRace = 'British Shorthair';
 
 const kittenThree = `  <li class="card">
@@ -59,6 +62,34 @@ const kittenThree = `  <li class="card">
                        </li>`
 
 
-listElement.innerHTML = kittenThree;
+//listElement.innerHTML += kittenThree;
 
+
+////////////  condicionales
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+input_search_desc.value = '';
+const descrSearchText = input_search_desc.value;
+
+if( kittenOneDesc.includes(descrSearchText) ) {
+    listElement.innerHTML += kittenOne;
+}
+    
+    
+    if( kittenTwoDesc.includes(descrSearchText) ) {
+   
+        listElement.innerHTML += kittenTwo;
+    }
+    
+    if( kittenThreeDesc.includes(descrSearchText) ) {
+        listElement.innerHTML += kittenThree;
+    }
+/////////// condicionales .2
+
+    if (formElement.classList.contains('collapsed')) {
+        //completa el código
+      } else {
+        //completa el código
+      }
+    
 
