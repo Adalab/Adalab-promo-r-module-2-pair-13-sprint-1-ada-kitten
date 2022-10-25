@@ -90,19 +90,20 @@ if( kittenOneDesc.includes(descrSearchText) ) {
       }
     
   //////// condicionales .3 (raza)   
-  /* Mirar esta tarde!!!!
+  /* Mirar esta tarde!!!!*/
 
-  let html = 'race';
+  let html = '';
   const input_search_race = document.querySelector('.js_race');
-  input_search_race.value = '';
-  const raceText = input.catRace.value;
+  input_search_race.value = ''; /*si ponemos aquí la raza entonces sale*/
+  const catRace = document.querySelector('.catRace');
+  //const raceText = input.catRace.value;
 
-if (raceText === "") {
-  raceText.innerHTML = `No se ha especificado la raza`;
-  /*html = `No se ha especificado la raza`;
+if (input_search_race.value === "") {
+  html = `No se ha especificado la raza`;
 } else {
-  html = race;
-} */
+  html = input_search_race.value;
+} 
+catRace.innerHTML = html;
 
 ////Evento formulario
 
