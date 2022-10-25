@@ -3,10 +3,9 @@
 const sectionElement = document.querySelector('.js-new-form');
 const listElement = document.querySelector('.js-list');
 const form = sectionElement.classList.remove("collapsed");
+const btn = document.querySelector('.js-btn');
 
 // Conviertir todos los textos de la etiqueta BODY a minúsculas
-
-//String.toUpperCase DUDA RESUELTA
 
 
 //variables de la información de cada gatito
@@ -29,7 +28,7 @@ const kittenOne =  `<li class="card">
 
 //kitten2
 const kittenTwoImage = 'https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg';
-const kittenTwoName = 'Fiona';
+const kittenTwoName = 'Fiona'.toUpperCase();
 const kittenTwoDesc = 'Risueño, juguetón, le guta estar tranquilo y que nadie le moleste.Es una maravilla acariciarle!';
 const kittenTwoRace = 'British Shorthair';
 
@@ -47,7 +46,7 @@ const kittenTwo = `  <li class="card">
 
 //kitten3
 const kittenThreeImage = 'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg" alt="gatito';
-const kittenThreeName = 'Cielo';
+const kittenThreeName = 'Cielo'.toUpperCase();
 const kittenThreeDesc = 'Ruiseño, cariñoso; juguetón, le guta estar tranquilo y que nadie le moleste.Es una maravilla acariciarle!';
 const kittenThreeRace = 'British Shorthair';
 
@@ -90,4 +89,29 @@ if( kittenOneDesc.includes(descrSearchText) ) {
         sectionElement.classList.add('collapsed');
       }
     
+  //////// condicionales .3 (raza)   
+  /* Mirar esta tarde!!!!
 
+  let html = 'race';
+  const input_search_race = document.querySelector('.js_race');
+  input_search_race.value = '';
+  const raceText = input.catRace.value;
+
+if (raceText === "") {
+  raceText.innerHTML = `No se ha especificado la raza`;
+  /*html = `No se ha especificado la raza`;
+} else {
+  html = race;
+} */
+
+////Evento formulario
+
+btn.addEventListener('Click',()=>{
+    sectionElement.classList.add('collapsed');
+    /*if (sectionElement.classList.contains('collapsed')) {
+        sectionElement.classList.remove('collapsed');
+      } else {
+        sectionElement.classList.add('collapsed');
+      INTENTAR MAÑANA}*/
+      
+});
