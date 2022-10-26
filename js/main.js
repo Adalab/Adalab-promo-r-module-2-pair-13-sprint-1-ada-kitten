@@ -4,6 +4,13 @@ const sectionElement = document.querySelector('.js-new-form');
 const listElement = document.querySelector('.js-list');
 const form = sectionElement.classList.remove("collapsed");
 const btn = document.querySelector('.js-btn');
+const btnAdd = document.querySelector(".js-btn-add");
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMesageError = document.querySelector('.js-label-error');
+const btnSearch = document.querySelector(".js-btn-search");
+const btncancel = document.querySelector(".js-btn-cancel");
 
 // Conviertir todos los textos de la etiqueta BODY a minúsculas
 
@@ -93,10 +100,9 @@ if( kittenOneDesc.includes(descrSearchText) ) {
   /* Mirar esta tarde!!!!*/
 
   let html = '';
-  const input_search_race = document.querySelector('.js_race');
+  const input_search_race = document.querySelector('.js-race');
   input_search_race.value = ''; /*si ponemos aquí la raza entonces sale*/
   const catRace = document.querySelector('.catRace');
-  //const raceText = input.catRace.value;
 
 if (input_search_race.value === "") {
   html = `No se ha especificado la raza`;
@@ -107,12 +113,43 @@ catRace.innerHTML = html;
 
 ////Evento formulario
 
-btn.addEventListener('Click',()=>{
-    sectionElement.classList.add('collapsed');
-    /*if (sectionElement.classList.contains('collapsed')) {
-        sectionElement.classList.remove('collapsed');
-      } else {
-        sectionElement.classList.add('collapsed');
-      INTENTAR MAÑANA}*/
-      
+btn.addEventListener('click',(event)=>{
+  event.preventDefault();
+    sectionElement.classList.toggle('collapsed');
+});
+
+
+btnAdd.addEventListener('click',(event)=>{
+  event.preventDefault();
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+     alert("Debe rellenar todos los valores");
+  } else {
+    
+  }
+
+});
+
+btnSearch.addEventListener('click',(event)=>{
+  event.preventDefault();
+   
+  if (input_search_race.value === '' && input_search_desc.value === '') {
+    alert("Debe rellenar todos los valores");
+  }
+
+});
+
+btncancel.addEventListener('click',(event)=>{
+  event.preventDefault();
+  
+   inputDesc.value = '';
+   inputPhoto.value = '';
+   inputName.value = '';
+
+console.log("holi");
+  
 });
