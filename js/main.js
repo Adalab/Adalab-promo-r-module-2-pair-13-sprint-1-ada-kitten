@@ -112,10 +112,11 @@ catRace.innerHTML = html;
 
 // ////Evento formulario
 
- btn.addEventListener('click',(event)=>{
+/* btn.addEventListener('click',(event)=>{
+  console.log("hola");
   event.preventDefault();
     sectionElement.classList.toggle('collapsed');
-});
+}); */
 
 
 btnAdd.addEventListener('click',(event)=>{
@@ -158,30 +159,31 @@ console.log("holi");
 ////// SIN TERMINAR, MIRAR MAÑANA
 
 
-const linkNewFormElememt = sectionElement;
-const newFormElement = sectionElement;
+/*const linkNewFormElement = btn;
+const newFormElement = sectionElement;*/ 
+//Se puede borrar porque ya están declaradas arriba declaradas(btn y sectionElement)
 
 
 //Declara una función llamada showNewCatForm para mostrar el formulario y otra llamada hideNewCatForm para ocultar el formulario
 
 function showNewCatForm() {
-  newFormElement.classList.remove('collapsed');
+  sectionElement.classList.remove('collapsed');
 }
 function hideNewCatForm() {
-  newFormElement.classList.add('collapsed');
+  sectionElement.classList.add('collapsed');
 
 }
 
 //Declaro la función manejadora y utilizo las funciones creadas anteriormente,
 function handleClickNewCatForm(event) {
   event.preventDefault();
-
-  if (newFormElement.classList.contains('collapsed')) {
-    showNewCatForm;
+  if (sectionElement.classList.contains('collapsed')) {
+    showNewCatForm();
   } else {
-    hideNewCatForm;
+    hideNewCatForm();
   }
 }
 
 //declaro mi evento y la función manejadora:
-linkNewFormElememt.addEventListener('click', handleClickNewCatForm);
+btn.addEventListener('click', handleClickNewCatForm);
+//En el icono del (+) estamos metiendo el evento click y cuando el evento click se ejecuta se dispara la funcion handleClickNewCatForm.
