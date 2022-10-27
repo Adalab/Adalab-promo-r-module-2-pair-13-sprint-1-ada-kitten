@@ -97,7 +97,6 @@ if( kittenOneDesc.includes(descrSearchText) ) {
       }
     
   //////// condicionales .3 (raza)   
-  /* Mirar esta tarde!!!!*/
 
   let html = '';
   const input_search_race = document.querySelector('.js-race');
@@ -111,9 +110,9 @@ if (input_search_race.value === "") {
 } 
 catRace.innerHTML = html;
 
-////Evento formulario
+// ////Evento formulario
 
-btn.addEventListener('click',(event)=>{
+ btn.addEventListener('click',(event)=>{
   event.preventDefault();
     sectionElement.classList.toggle('collapsed');
 });
@@ -126,13 +125,13 @@ btnAdd.addEventListener('click',(event)=>{
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
   
-  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-     alert("Debe rellenar todos los valores");
+ if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+      alert("Debe rellenar todos los valores");
   } else {
     
   }
 
-});
+ });
 
 btnSearch.addEventListener('click',(event)=>{
   event.preventDefault();
@@ -153,3 +152,36 @@ btncancel.addEventListener('click',(event)=>{
 console.log("holi");
   
 });
+
+//////// Funciones
+////1. Mostrar/ocultar el formulario nuevo gatito
+////// SIN TERMINAR, MIRAR MAÑANA
+
+
+const linkNewFormElememt = sectionElement;
+const newFormElement = sectionElement;
+
+
+//Declara una función llamada showNewCatForm para mostrar el formulario y otra llamada hideNewCatForm para ocultar el formulario
+
+function showNewCatForm() {
+  newFormElement.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  newFormElement.classList.add('collapsed');
+
+}
+
+//Declaro la función manejadora y utilizo las funciones creadas anteriormente,
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+
+  if (newFormElement.classList.contains('collapsed')) {
+    showNewCatForm;
+  } else {
+    hideNewCatForm;
+  }
+}
+
+//declaro mi evento y la función manejadora:
+linkNewFormElememt.addEventListener('click', handleClickNewCatForm);
