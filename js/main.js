@@ -5,9 +5,6 @@ const listElement = document.querySelector('.js-list');
 const form = sectionElement.classList.remove("collapsed");
 const btn = document.querySelector('.js-btn');
 const btnAdd = document.querySelector(".js-btn-add");
-const inputDesc = document.querySelector('.js-input-desc');
-const inputPhoto = document.querySelector('.js-input-photo');
-const inputName = document.querySelector('.js-input-name');
 const labelMesageError = document.querySelector('.js-label-error');
 const btnSearch = document.querySelector(".js-btn-search");
 const btncancel = document.querySelector(".js-btn-cancel");
@@ -112,11 +109,11 @@ catRace.innerHTML = html;
 
 // ////Evento formulario
 
-/* btn.addEventListener('click',(event)=>{
+btn.addEventListener('click',(event)=>{
   console.log("hola");
   event.preventDefault();
     sectionElement.classList.toggle('collapsed');
-}); */
+});
 
 
 btnAdd.addEventListener('click',(event)=>{
@@ -144,7 +141,7 @@ btnSearch.addEventListener('click',(event)=>{
 });
 
 btncancel.addEventListener('click',(event)=>{
-  event.preventDefault();
+ event.preventDefault();
   
    inputDesc.value = '';
    inputPhoto.value = '';
@@ -185,5 +182,39 @@ function handleClickNewCatForm(event) {
 }
 
 //declaro mi evento y la función manejadora:
-btn.addEventListener('click', handleClickNewCatForm);
+btnAdd.addEventListener('click', handleClickNewCatForm);
 //En el icono del (+) estamos metiendo el evento click y cuando el evento click se ejecuta se dispara la funcion handleClickNewCatForm.
+
+///////2. Crear el gatito en HTML
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector('.input-js-race');
+
+
+// function renderKitten(url, desc, name, race) {
+
+//   const InputName = inputName.value;
+//   const InputPhoto = inputPhoto.value;
+//   const InputDesc = inputDesc.value;
+//   const InputRace = inputRace.value;
+
+//   listElement.InnerHTML += `<li>${inputName.value} ${inputDesc.value} ${inputPhoto.value} ${inputRace.value}</li>`;
+//   console.log("hola"); 
+//   console.log(listElement);     
+ 
+//} 
+btnAdd.addEventListener('click', renderKitten(inputName.value));
+
+function renderKitten(url, desc, name, race) {
+  /*const InputName = inputName.value;
+  const InputPhoto = inputPhoto.value;
+  const InputDesc = inputDesc.value;
+  const InputRace = inputRace.value;*/
+
+  listElement.InnerHTML += `<li>${inputName.value}, ${inputDesc.value}, ${inputPhoto.value}, ${inputRace.value}</li>`;
+  console.log(url); 
+  //console.log(listElement);  
+}
+
